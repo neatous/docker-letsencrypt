@@ -1,10 +1,7 @@
-FROM quay.io/letsencrypt/letsencrypt
+FROM certbot/certbot
 MAINTAINER Martin Venuš <martin.venus@gmail.com>
 
-ENV DEBIAN_FRONTEND noninteractive
-ENV TERM xterm
-
-RUN apt-get update && apt-get -y install docker.io
+RUN apk add --update coreutils bash && rm -rf /var/cache/apk/*
 
 ADD start.sh /bin/start.sh
 
