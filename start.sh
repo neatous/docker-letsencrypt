@@ -30,7 +30,7 @@ le_fixpermissions() {
 }
 
 le_renew() {
-    certbot certonly --non-interactive --webroot --preferred-chain "DST Root CA X3" --rsa-key-size 4096 --agree-tos --renew-by-default --email ${EMAIL_ADDRESS} -w ${WEBROOT_PATH} ${LE_DOMAINS}
+    certbot certonly --non-interactive --webroot --rsa-key-size 4096 --agree-tos --renew-by-default --email ${EMAIL_ADDRESS} -w ${WEBROOT_PATH} ${LE_DOMAINS}
     le_fixpermissions
 }
 
